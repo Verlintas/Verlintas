@@ -38,11 +38,10 @@
 
 ## Stats
 
-![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=Verlintas&show_icons=true&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Verlintas&layout=compact&theme=tokyonight&hide_border=true)
 
-![Public Repos](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FVerlintas&query=public_repos&label=Public%20Repos&color=2b6cb0)
-![BetterAIChat commits](https://img.shields.io/github/commit-activity/m/Verlintas/BetterAIChat?label=BetterAIChat%20commits)
-![VicinityProbe commits](https://img.shields.io/github/commit-activity/m/Verlintas/VicinityProbe?label=VicinityProbe%20commits)
+![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
 
 ## Working Environment
 

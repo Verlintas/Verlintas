@@ -1,33 +1,21 @@
 # Verlintas
 
-**2010 | Full-stack & AI Developer** · Beijing, China
+- 🇨🇳 Chinese · 北京 / Beijing
+- Full-stack & AI Developer · 2010
+- Building, breaking, learning, shipping — making anything just for fun.
+- 边造边拆边学，为兴趣而写代码。
 
-Building, breaking, learning, shipping — making anything just for fun.
-边造边拆边学，为兴趣而写代码。
+## 🌱 Tech Stack
 
-![Profile views](https://komarev.com/ghpvc/?username=Verlintas&color=blue&style=flat)
-![Total stars](https://img.shields.io/github/stars/Verlintas?style=flat&label=Total%20stars)
-![Followers](https://img.shields.io/github/followers/Verlintas?style=flat&label=Followers)
+![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
+![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat-square&logo=android&logoColor=fff)
+![Jetpack Compose](https://img.shields.io/badge/-Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=fff)
+![Kotlin Multiplatform](https://img.shields.io/badge/-KMP-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
+![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat-square&logo=swift&logoColor=fff)
+![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu%20bash&logoColor=fff)
+![AI & LLM](https://img.shields.io/badge/-AI%20%26%20LLM-FF6F00?style=flat-square&logo=openai&logoColor=fff)
 
----
-
-## About / 关于
-
-- 方向：Android 开发、Kotlin Multiplatform、AI 智能体
-- 兴趣：安全工具、效率应用、自动化、离线优先架构
-- 成员：学生组织 [NUSV](https://github.com/NUSV)
-
-## Tech Stack / 技术栈
-
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white&style=flat)
-![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white&style=flat)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white&style=flat)
-![Kotlin Multiplatform](https://img.shields.io/badge/KMP-7F52FF?logo=kotlin&logoColor=white&style=flat)
-![Swift](https://img.shields.io/badge/Swift-FA7343?logo=swift&logoColor=white&style=flat)
-![Shell](https://img.shields.io/badge/Shell-4EAA25?logo=gnubash&logoColor=white&style=flat)
-![AI & LLM](https://img.shields.io/badge/AI%20%26%20LLM-FF6F00?style=flat)
-
-## Projects / 项目
+## 🚀 Projects
 
 | 项目 | 说明 | 语言 |
 | --- | --- | --- |
@@ -36,7 +24,7 @@ Building, breaking, learning, shipping — making anything just for fun.
 | [nekomimi](https://github.com/Verlintas/nekomimi) | 无障碍聊天文本改写工具：正则替换、预设风格包、保活自愈 | Kotlin |
 | [GoogleOnYourMac](https://github.com/Verlintas/GoogleOnYourMac) | Google 服务在 macOS 上像原生应用一样使用（10 个服务 × 3 种内核） | Swift / Shell |
 
-### 组织项目 / NUSV
+### NUSV
 
 | 项目 | 说明 |
 | --- | --- |
@@ -44,7 +32,10 @@ Building, breaking, learning, shipping — making anything just for fun.
 | [Syna-NUSV](https://github.com/NUSV/Syna-NUSV) | 离线优先局域网通讯：端到端加密、阅后即焚、群聊、自托管 |
 | [Gomoku-NUSV](https://github.com/NUSV/Gomoku-NUSV) | 五子棋独立版 |
 
-## Contact / 联系
+## 📫 Get in Touch
 
-- Email: ulv777777@gmail.com
-- Organization: [NUSV](https://github.com/NUSV) · [nusv.mysxl.cn](https://nusv.mysxl.cn)
+[![Email](https://img.shields.io/badge/-ulv777777@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ulv777777@gmail.com)
+[![NUSV](https://img.shields.io/badge/-NUSV-24292e?style=flat-square&logo=github&logoColor=white)](https://github.com/NUSV)
+[![Website](https://img.shields.io/badge/-nusv.mysxl.cn-2b6cb0?style=flat-square&logo=globe&logoColor=white)](https://nusv.mysxl.cn)
+
+![Visit Count](https://komarev.com/ghpvc/?username=Verlintas&color=blue&style=flat-square)

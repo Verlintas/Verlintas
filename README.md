@@ -3,7 +3,6 @@
 - Chinese · 北京 / Beijing
 - Full-stack & AI Developer · 2010
 - Building, breaking, learning, shipping — making anything just for fun.
-- 边造边拆边学，为兴趣而写代码。
 
 ## Tech Stack
 
@@ -35,6 +34,7 @@
 ## Get in Touch
 
 [![Email](https://img.shields.io/badge/-ulv777777@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ulv777777@gmail.com)
+[![Email](https://img.shields.io/badge/-12321666@163.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:12321666@163.com)
 [![NUSV](https://img.shields.io/badge/-NUSV-24292e?style=flat-square&logo=github&logoColor=white)](https://github.com/NUSV)
 [![Website](https://img.shields.io/badge/-nusv.mysxl.cn-2b6cb0?style=flat-square&logo=globe&logoColor=white)](https://nusv.mysxl.cn)
 

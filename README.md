@@ -38,9 +38,9 @@
 
 ## Stats
 
-![Profile Details](profile-summary-card-output/tokyonight/profile-details.svg)
+![Profile Details](profile-summary-card-output/tokyonight/0-profile-details.svg)
 
-![Top Languages](profile-summary-card-output/tokyonight/top-languages.svg)
+![Stats](profile-summary-card-output/tokyonight/3-stats.svg)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
 

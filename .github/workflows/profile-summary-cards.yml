@@ -11,11 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: generate-github-profile-summary-cards
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
-      - uses: yoshi389111/github-profile-summary-cards@release
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: Verlintas
           UTC_OFFSET: 8

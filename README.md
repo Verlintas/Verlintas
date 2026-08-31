@@ -1,5 +1,7 @@
 # Verlintas
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=800&center=false&width=420&lines=Full-stack+%26+AI+Developer;Android+%2F+Kotlin+Multiplatform;Building+for+fun+%E2%80%94+shipping+always)](https://git.io/typing-svg)
+
 - Chinese · 北京 / Beijing
 - Full-stack & AI Developer · 2010
 - Building, breaking, learning, shipping — making anything just for fun.
@@ -37,6 +39,8 @@
 ## Stats
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
+
+![Contribution Graph](https://ghchart.rshah.org/Verlintas)
 
 ## Working Environment
 

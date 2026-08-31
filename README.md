@@ -38,8 +38,9 @@
 
 ## Stats
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=Verlintas&show_icons=true&theme=tokyonight&hide_border=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Verlintas&layout=compact&theme=tokyonight&hide_border=true)
+![Profile Details](profile-summary-card-output/tokyonight/profile-details.svg)
+
+![Top Languages](profile-summary-card-output/tokyonight/top-languages.svg)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
 

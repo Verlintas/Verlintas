@@ -12,8 +12,11 @@
 
 - 方向：Android 开发、Kotlin Multiplatform、AI 智能体
 - 兴趣：安全工具、效率应用、自动化、离线优先架构
-- 组织：学生组织 [NUSV](https://github.com/NUSV) 成员
 - 语言：中文 / English
+
+## Roles
+
+- Founder · Developer · Programmer
 
 ## Tech Stack
 
@@ -31,10 +34,21 @@
 - 探索 LLM function-calling 与设备自动化
 - 用 Swift / Shell 折腾 macOS 效率工具
 
+## Stats
+
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=Verlintas&show_icons=true&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Verlintas&layout=compact&theme=tokyonight&hide_border=true)
+
 ## Working Environment
 
 ![macOS](https://img.shields.io/badge/-macOS-000000?style=flat-square&logo=apple&logoColor=fff)
 ![MacBook Pro](https://img.shields.io/badge/-MacBook%20Pro-000000?style=flat-square&logo=apple&logoColor=fff)
+
+## Devices in Use
+
+![MacBook Pro](https://img.shields.io/badge/-MacBook%20Pro-000000?style=flat-square&logo=apple&logoColor=fff)
+![Windows 11 Desktop](https://img.shields.io/badge/-Windows%2011%20Desktop-0078D6?style=flat-square&logo=windows&logoColor=fff)
+![Windows Server 2016](https://img.shields.io/badge/-Windows%20Server%202016-0078D6?style=flat-square&logo=windows&logoColor=fff)
 
 ## Get in Touch
 
@@ -43,5 +57,3 @@
 [![X](https://img.shields.io/badge/-@Verlintas-000000?style=flat-square&logo=X&logoColor=white)](https://x.com/Verlintas)
 [![NUSV](https://img.shields.io/badge/-NUSV-24292e?style=flat-square&logo=github&logoColor=white)](https://github.com/NUSV)
 [![Website](https://img.shields.io/badge/-nusv.mysxl.cn-2b6cb0?style=flat-square&logo=globe&logoColor=white)](https://nusv.mysxl.cn)
-
-![Visit Count](https://komarev.com/ghpvc/?username=Verlintas&color=blue&style=flat-square)

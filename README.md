@@ -4,6 +4,10 @@
 - Full-stack & AI Developer · 2010
 - Building, breaking, learning, shipping — making anything just for fun.
 
+![Profile views](https://komarev.com/ghpvc/?username=Verlintas&color=blue&style=flat-square)
+![Followers](https://img.shields.io/github/followers/Verlintas?style=flat-square&label=Followers)
+![Total stars](https://img.shields.io/github/stars/Verlintas?style=flat-square&label=Total%20stars)
+
 ## About
 
 - 方向：Android 开发、Kotlin Multiplatform、AI 智能体

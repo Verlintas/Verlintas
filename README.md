@@ -1,6 +1,6 @@
 # Verlintas
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=800&width=440&lines=Full-stack+%26+AI+Developer;Android+%2F+Kotlin+Multiplatform+%2F+Swift;Security+tools+%26+AI+agents)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=800&width=440&lines=Full-stack+%26+AI+Developer;Android+%2F+Kotlin+Multiplatform+%2F+Swift;Security+tools+%26+AI+agents;Just+for+fun.)](https://git.io/typing-svg)
 
 - Chinese · 北京 / Beijing
 - Full-stack & AI Developer · 2010

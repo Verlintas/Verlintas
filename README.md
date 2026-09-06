@@ -29,12 +29,15 @@
 ![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat-square&logo=swift&logoColor=fff)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu%20bash&logoColor=fff)
 ![AI & LLM](https://img.shields.io/badge/-AI%20%26%20LLM-FF6F00?style=flat-square&logo=openai&logoColor=fff)
+![C / NDK](https://img.shields.io/badge/-C%20%2F%20NDK-A8B9CC?style=flat-square&logo=c&logoColor=fff)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=fff)
 
 ## Now
 
 - 在做 BetterAIChat：原生 Android AI 智能体（自带 API Key、Shizuku、屏幕分析、语音助手）
 - 探索 LLM function-calling 与设备自动化
 - 用 Swift / Shell 折腾 macOS 效率工具
+- 维护个人网站：[verlintas.github.io](https://verlintas.github.io)（手写 HTML/CSS/JS）
 
 ## Stats
 
@@ -60,5 +63,6 @@
 [![Email](https://img.shields.io/badge/-ulv777777@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ulv777777@gmail.com)
 [![Email](https://img.shields.io/badge/-12321666@163.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:12321666@163.com)
 [![X](https://img.shields.io/badge/-@Verlintas-000000?style=flat-square&logo=X&logoColor=white)](https://x.com/Verlintas)
+[![Website](https://img.shields.io/badge/-verlintas.github.io-000000?style=flat-square&logo=github&logoColor=white)](https://verlintas.github.io)
 [![NUSV](https://img.shields.io/badge/-NUSV-24292e?style=flat-square&logo=github&logoColor=white)](https://github.com/NUSV)
-[![Website](https://img.shields.io/badge/-nusv.mysxl.cn-2b6cb0?style=flat-square&logo=globe&logoColor=white)](https://nusv.mysxl.cn)
+[![NUSV Site](https://img.shields.io/badge/-nusv.mysxl.cn-2b6cb0?style=flat-square&logo=globe&logoColor=white)](https://nusv.mysxl.cn)

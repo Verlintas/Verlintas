@@ -37,7 +37,6 @@
 - 在做 BetterAIChat：原生 Android AI 智能体（自带 API Key、Shizuku、屏幕分析、语音助手）
 - 探索 LLM function-calling 与设备自动化
 - 用 Swift / Shell 折腾 macOS 效率工具
-- 维护个人网站：[verlintas.github.io](https://verlintas.github.io)（手写 HTML/CSS/JS）
 
 ## Stats
 

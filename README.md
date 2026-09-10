@@ -19,15 +19,31 @@
 
 ## Tech Stack
 
+**Languages**
+
 ![Kotlin](https://img.shields.io/badge/-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
-![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat-square&logo=android&logoColor=fff)
-![Jetpack Compose](https://img.shields.io/badge/-Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=fff)
-![Kotlin Multiplatform](https://img.shields.io/badge/-KMP-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
 ![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat-square&logo=swift&logoColor=fff)
 ![C / NDK](https://img.shields.io/badge/-C%20%2F%20NDK-A8B9CC?style=flat-square&logo=c&logoColor=fff)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu%20bash&logoColor=fff)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=fff)
-![AI & LLM](https://img.shields.io/badge/-AI%20%26%20LLM-FF6F00?style=flat-square&logo=openai&logoColor=fff)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000)
+
+**Platforms**
+
+![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat-square&logo=android&logoColor=fff)
+![Jetpack Compose](https://img.shields.io/badge/-Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=fff)
+![Kotlin Multiplatform](https://img.shields.io/badge/-KMP-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
+![SwiftUI](https://img.shields.io/badge/-SwiftUI-0D84F4?style=flat-square&logo=swift&logoColor=fff)
+![Gradle](https://img.shields.io/badge/-Gradle-03A9F4?style=flat-square&logo=gradle&logoColor=fff)
+![Android Automotive](https://img.shields.io/badge/-Android%20Automotive-607D8B?style=flat-square&logo=android&logoColor=fff)
+
+**Domains**
+
+![LLM Agents](https://img.shields.io/badge/-LLM%20Agents-FF6F00?style=flat-square&logo=openai&logoColor=fff)
+![Security Analysis](https://img.shields.io/badge/-Security%20Analysis-00C2A8?style=flat-square)
+![NFC & Flipper](https://img.shields.io/badge/-NFC%20%26%20Flipper-00A1D6?style=flat-square)
+![Accessibility](https://img.shields.io/badge/-Accessibility-FFB300?style=flat-square)
+![Chromium Packaging](https://img.shields.io/badge/-Chromium%20Packaging-536DFE?style=flat-square&logo=googlechrome&logoColor=fff)
 
 ## Now
 

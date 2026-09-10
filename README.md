@@ -14,11 +14,8 @@
 
 - 方向：Android 开发、Kotlin Multiplatform、AI 智能体
 - 兴趣：安全工具、效率应用、自动化、离线优先架构
+- 身份：Founder · Developer · Programmer
 - 语言：中文 / English
-
-## Roles
-
-- Founder · Developer · Programmer
 
 ## Tech Stack
 
@@ -27,10 +24,10 @@
 ![Jetpack Compose](https://img.shields.io/badge/-Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=fff)
 ![Kotlin Multiplatform](https://img.shields.io/badge/-KMP-7F52FF?style=flat-square&logo=kotlin&logoColor=fff)
 ![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat-square&logo=swift&logoColor=fff)
-![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu%20bash&logoColor=fff)
-![AI & LLM](https://img.shields.io/badge/-AI%20%26%20LLM-FF6F00?style=flat-square&logo=openai&logoColor=fff)
 ![C / NDK](https://img.shields.io/badge/-C%20%2F%20NDK-A8B9CC?style=flat-square&logo=c&logoColor=fff)
+![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu%20bash&logoColor=fff)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=fff)
+![AI & LLM](https://img.shields.io/badge/-AI%20%26%20LLM-FF6F00?style=flat-square&logo=openai&logoColor=fff)
 
 ## Now
 
@@ -38,24 +35,17 @@
 - 探索 LLM function-calling 与设备自动化
 - 用 Swift / Shell 折腾 macOS 效率工具
 
-## Stats
-
-![Profile Details](profile-summary-card-output/tokyonight/0-profile-details.svg)
-
-![Stats](profile-summary-card-output/tokyonight/3-stats.svg)
-
-![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
-
-## Working Environment
-
-![macOS](https://img.shields.io/badge/-macOS-000000?style=flat-square&logo=apple&logoColor=fff)
-![MacBook Pro](https://img.shields.io/badge/-MacBook%20Pro-000000?style=flat-square&logo=apple&logoColor=fff)
-
-## Devices in Use
+## Devices
 
 ![MacBook Pro](https://img.shields.io/badge/-MacBook%20Pro-000000?style=flat-square&logo=apple&logoColor=fff)
 ![Windows 11 Desktop](https://img.shields.io/badge/-Windows%2011%20Desktop-0078D6?style=flat-square&logo=windows&logoColor=fff)
 ![Windows Server 2016](https://img.shields.io/badge/-Windows%20Server%202016-0078D6?style=flat-square&logo=windows&logoColor=fff)
+
+## Stats
+
+![Profile Details](profile-summary-card-output/tokyonight/0-profile-details.svg)
+![Stats](profile-summary-card-output/tokyonight/3-stats.svg)
+![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
 
 ## Get in Touch
 

@@ -56,6 +56,7 @@
 ![Profile Details](profile-summary-card-output/tokyonight/0-profile-details.svg)
 ![Stats](profile-summary-card-output/tokyonight/3-stats.svg)
 ![GitHub Streak](https://streak-stats.demolab.com?user=Verlintas&theme=tokyonight&hide_border=true)
+![Contribution Graph](contrib-heatmap.svg)
 
 ## Get in Touch
 

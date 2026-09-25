@@ -1,0 +1,27 @@
+name: Check Achievements
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Fetch profile page
+        run: |
+          curl -sL -A "Mozilla/5.0" https://github.com/Verlintas -o profile.html
+          echo "profile.html size: $(wc -c < profile.html)"
+          echo "=== achievement asset names on profile ==="
+          grep -oiE '(pull-shark|quickdraw|yolo|galaxy-brain|pair-extraordinaire|starstruck|heart-on-your-sleeve|public-sponsor|arctic-code-vault)' profile.html | sort | uniq -c || true
+          echo "=== alt texts on profile ==="
+          grep -oE 'alt="[^"]+"' profile.html | sort -u | head -40 || true
+      - name: Fetch achievements page
+        run: |
+          curl -sL -A "Mozilla/5.0" https://github.com/users/Verlintas/achievements -o achievements.html
+          echo "achievements.html size: $(wc -c < achievements.html)"
+          echo "=== achievement asset names on achievements page ==="
+          grep -oiE '(pull-shark|quickdraw|yolo|galaxy-brain|pair-extraordinaire|starstruck|heart-on-your-sleeve|public-sponsor|arctic-code-vault)' achievements.html | sort | uniq -c || true
+          echo "=== alt texts on achievements page ==="
+          grep -oE 'alt="[^"]+"' achievements.html | sort -u | head -40 || true

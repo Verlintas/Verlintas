@@ -9,6 +9,7 @@
 ![Profile views](https://komarev.com/ghpvc/?username=Verlintas&color=blue&style=flat-square)
 ![Followers](https://img.shields.io/github/followers/Verlintas?style=flat-square&label=Followers)
 ![Total stars](https://img.shields.io/github/stars/Verlintas?style=flat-square&label=Total%20stars)
+[![M8ven Score](https://m8ven.ai/badge/mcp/verlintas-novabaic-17jljr?v=ec4979aece489895c2b2670f95387bf0)](https://m8ven.ai/mcp/verlintas-novabaic-17jljr)
 
 ## About
 
@@ -16,9 +17,6 @@
 - 兴趣：安全工具、效率应用、自动化、离线优先架构
 - 身份：Founder · Developer · Programmer
 - 语言：中文 / English
-
-## Extra
-[![M8ven Score](https://m8ven.ai/badge/mcp/verlintas-novabaic-17jljr?v=ec4979aece489895c2b2670f95387bf0)](https://m8ven.ai/mcp/verlintas-novabaic-17jljr)
 
 ## Tech Stack
 

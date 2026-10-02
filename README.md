@@ -17,6 +17,9 @@
 - 身份：Founder · Developer · Programmer
 - 语言：中文 / English
 
+## Extra
+[![M8ven Score](https://m8ven.ai/badge/mcp/verlintas-novabaic-17jljr?v=ec4979aece489895c2b2670f95387bf0)](https://m8ven.ai/mcp/verlintas-novabaic-17jljr)
+
 ## Tech Stack
 
 **Languages**

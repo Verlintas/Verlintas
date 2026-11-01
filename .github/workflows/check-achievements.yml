@@ -17,6 +17,10 @@ jobs:
           grep -oiE '(pull-shark|quickdraw|yolo|galaxy-brain|pair-extraordinaire|starstruck|heart-on-your-sleeve|public-sponsor|arctic-code-vault)' profile.html | sort | uniq -c || true
           echo "=== alt texts on profile ==="
           grep -oE 'alt="[^"]+"' profile.html | sort -u | head -40 || true
+          echo "=== readme image refs ==="
+          grep -oE 'assets/[a-z-]+\.svg' profile.html | sort | uniq -c || true
+          echo "=== camo images ==="
+          grep -oE 'camo\.githubusercontent\.com/[^"]{0,90}' profile.html | head -8 || true
       - name: Fetch achievements page
         run: |
           curl -sL -A "Mozilla/5.0" https://github.com/users/Verlintas/achievements -o achievements.html

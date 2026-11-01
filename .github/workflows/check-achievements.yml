@@ -19,6 +19,11 @@ jobs:
           grep -oE 'alt="[^"]+"' profile.html | sort -u | head -40 || true
           echo "=== readme images (decoded camo refs) ==="
           grep -oE 'alt="[^"]+"' profile.html | grep -iE "verlintas|terminal|stack|selected work|signals|streak|contributions" | sort -u | head -20 || true
+          echo "=== raw asset status ==="
+          for path in assets/hero.svg assets/terminal.svg assets/stack.svg assets/projects.svg assets/stats.svg assets/divider.svg contrib-heatmap.svg; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://raw.githubusercontent.com/Verlintas/Verlintas/main/$path")
+            printf '%s -> %s\n' "$path" "$code"
+          done
           python3 - <<'PY'
           import re
           src = open("profile.html", encoding="utf-8", errors="ignore").read()

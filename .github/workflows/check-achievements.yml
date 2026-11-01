@@ -18,23 +18,14 @@ jobs:
           echo "=== alt texts on profile ==="
           grep -oE 'alt="[^"]+"' profile.html | sort -u | head -40 || true
           echo "=== readme images (decoded camo refs) ==="
+          grep -oE 'alt="[^"]+"' profile.html | grep -iE "verlintas|terminal|stack|selected work|signals|streak|contributions" | sort -u | head -20 || true
           python3 - <<'PY'
           import re
           src = open("profile.html", encoding="utf-8", errors="ignore").read()
           urls = re.findall(r"https://camo\.githubusercontent\.com/[^\"' ]+", src)
           print("camo images found:", len(urls))
-          seen = set()
-          for url in urls:
-              for part in url.split("/"):
-                  if len(part) > 20 and all(c in "0123456789abcdef" for c in part):
-                      try:
-                          name = bytes.fromhex(part).decode("utf-8", "ignore")
-                      except ValueError:
-                          continue
-                      if name not in seen:
-                          seen.add(name)
-                          print("image:", name)
-                      break
+          for url in urls[:6]:
+              print("raw:", url[:120])
           PY
       - name: Fetch achievements page
         run: |

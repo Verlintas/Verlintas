@@ -5,8 +5,10 @@ Everything on the profile — hero, terminal, stack board, project cards and
 dividers — is drawn from this one script so the red/black design system stays
 consistent. Run: python3 scripts/build_profile_assets.py
 """
+import json
 import os
 import random
+import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.abspath(os.path.join(HERE, "..", "assets"))
@@ -220,7 +222,7 @@ def terminal():
     parts.append('<text x="134" y="%d" font-family="%s" font-size="11" letter-spacing="1.4" fill="%s">'
                  "verlintas@dev — zsh</text>" % (y0 + 22, MONO, DIM))
     parts.append('<text x="%d" y="%d" text-anchor="end" font-family="%s" font-size="9.5" '
-                 'letter-spacing="2" fill="%s">SECURE SHELL</text>' % (x0 + w - 22, y0 + 22, MONO, DIM))
+                 'letter-spacing="2" fill="%s">01 / WHOAMI</text>' % (x0 + w - 22, y0 + 22, MONO, DIM))
 
     # body lines (fade + slide in, then freeze)
     for i, (kind, text) in enumerate(lines):
@@ -268,13 +270,16 @@ def terminal():
     return "".join(parts)
 
 
+def chip_width(text):
+    return 14 + 10 + len(text) * 6.6 + 14
+
+
 def chip(x, y, text, dot_color=RED):
     pad_l, pad_r, height = 14, 14, 30
-    char_w = 6.6
     dot = 10
-    width = pad_l + dot + len(text) * char_w + pad_r
+    width = chip_width(text)
     parts = [
-        '<g>'
+        "<g>"
         '<rect x="%.1f" y="%d" width="%.1f" height="%d" rx="15" fill="%s" stroke="%s"/>'
         '<circle cx="%.1f" cy="%d" r="2.6" fill="%s"/>'
         '<text x="%.1f" y="%d" font-family="%s" font-size="11.5" fill="%s">%s</text>'
@@ -290,71 +295,122 @@ def chip(x, y, text, dot_color=RED):
 
 BRAND = {
     "Kotlin": "#7F52FF", "Swift": "#FA7343", "Rust": "#DEA584", "TypeScript": "#3178C6",
-    "Python": "#3776AB", "JavaScript": "#F7DF1E", "Astro": "#FF5D01", "C / NDK": "#A8B9CC",
-    "Shell": "#4EAA25", "Android": "#3DDC84", "Jetpack Compose": "#4285F4",
-    "Kotlin Multiplatform": "#7F52FF", "SwiftUI": "#0D84F4", "Gradle": "#03A9F4",
-    "Android Automotive": "#607D8B", "LLM Agents": "#FF6F00", "On-device AI": "#00BFA5",
-    "Security Analysis": "#00C2A8", "NFC & Flipper": "#00A1D6", "Accessibility": "#FFB300",
-    "Chromium Packaging": "#536DFE", "Offline-first": "#8E44AD",
+    "Python": "#3776AB", "C / NDK": "#A8B9CC", "Shell": "#4EAA25",
+    "Android": "#3DDC84", "Kotlin Multiplatform": "#7F52FF", "Jetpack Compose": "#4285F4",
+    "Compose Multiplatform": "#4285F4", "SwiftUI": "#0D84F4", "Gradle / AGP": "#03A9F4",
+    "LLM Agents": "#FF6F00", "MCP": "#FF6F00", "On-device Inference": "#00BFA5",
+    "APK Static Analysis": "#00C2A8", "TLS Fingerprinting": "#00A1D6",
+    "adb / Shizuku": "#3DDC84", "Accessibility Automation": "#FFB300",
+    "E2EE": "#8E44AD", "SMB2 / WebDAV": "#546E7A", "DLNA / Cast": "#00ACC1",
+    "Keystore Crypto": "#FF7043", "Media3 / libVLC": "#FF8A65",
 }
+
+STACK_GROUPS = [
+    ("LANGUAGES", ["Kotlin", "Swift", "Rust", "TypeScript", "Python", "C / NDK", "Shell"]),
+    ("PLATFORMS", ["Android", "Kotlin Multiplatform", "Jetpack Compose", "Compose Multiplatform", "SwiftUI", "Gradle / AGP"]),
+    ("SYSTEMS & SECURITY", [
+        "LLM Agents", "MCP", "On-device Inference", "APK Static Analysis", "TLS Fingerprinting",
+        "adb / Shizuku", "Accessibility Automation", "E2EE", "SMB2 / WebDAV", "DLNA / Cast",
+        "Keystore Crypto", "Media3 / libVLC",
+    ]),
+]
 
 
 def stack():
-    width, height = 1200, 330
-    groups = [
-        ("LANGUAGES", ["Kotlin", "Swift", "Rust", "TypeScript", "Python", "JavaScript", "Astro", "C / NDK", "Shell"]),
-        ("PLATFORMS", ["Android", "Jetpack Compose", "Kotlin Multiplatform", "SwiftUI", "Gradle", "Android Automotive"]),
-        ("DOMAINS", ["LLM Agents", "On-device AI", "Security Analysis", "NFC & Flipper", "Accessibility", "Chromium Packaging", "Offline-first"]),
-    ]
-    parts = [svg_open(width, height, "Stack — languages, platforms, domains"), common_defs()]
-    parts.append('<rect width="%d" height="%d" fill="%s"/>' % (width, height, BG))
-    parts.append('<rect x="40" y="18" width="1120" height="294" rx="16" fill="%s" stroke="%s"/>' % (PANEL, BORDER))
-
-    y = 58
-    for label, items in groups:
-        parts.append('<text x="70" y="%d" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">%s</text>'
-                     % (y, MONO, RED, label))
-        cx, cy = 70, y + 12
+    width = 1200
+    start_x, max_x = 70, 1130
+    rows = []
+    y = 100
+    last_chip_top = 0
+    for label, items in STACK_GROUPS:
+        rows.append(("label", label, y))
+        cx, cy = start_x, y + 12
         for item in items:
-            rendered, cw = chip(cx, cy, item, BRAND.get(item, RED))
-            if cx + cw > 1110:
-                cx = 70
+            cw = chip_width(item)
+            if cx + cw > max_x:
+                cx = start_x
                 cy += 40
-            rendered, cw = chip(cx, cy, item, BRAND.get(item, RED))
-            parts.append(rendered)
+            rows.append(("chip", item, cx, cy))
             cx += cw + 10
-        y = cy + 74
+        last_chip_top = cy
+        y = cy + 64
+    height = last_chip_top + 30 + 26 + 8
+
+    parts = [svg_open(width, height, "Stack — languages, platforms, systems and security"), common_defs()]
+    parts.append('<rect width="%d" height="%d" fill="%s"/>' % (width, height, BG))
+    parts.append('<rect x="40" y="18" width="1120" height="%d" rx="16" fill="%s" stroke="%s"/>'
+                 % (height - 26, PANEL, BORDER))
+    parts.append('<rect x="58" y="18" width="300" height="1.2" fill="url(#gLine)" opacity="0.6"/>')
+    parts.append('<text x="70" y="54" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">02 / STACK</text>'
+                 % (MONO, RED))
+    parts.append('<text x="1130" y="54" text-anchor="end" font-family="%s" font-size="9" letter-spacing="2" fill="%s">'
+                 "TOOLS OF THE TRADE</text>" % (MONO, DIM))
+
+    for row in rows:
+        if row[0] == "label":
+            parts.append('<text x="70" y="%d" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">%s</text>'
+                         % (row[2], MONO, RED, esc(row[1])))
+        else:
+            rendered, _ = chip(row[2], row[3], row[1], BRAND.get(row[1], RED))
+            parts.append(rendered)
 
     parts.append("</svg>")
     return "".join(parts)
 
 
 PROJECTS = [
-    ("01", "NOIR", "155", ["Kotlin", "KMP", "TUI"],
+    ("01", "NOIR", "Verlintas/NOIR", "155", ["Kotlin", "KMP", "TUI"],
      ["Android privacy audit over adb:", "permissions, endpoints, data flows —", "reversible fixes."]),
-    ("02", "BetterAIChat", "124", ["Kotlin", "Compose", "AI"],
+    ("02", "BetterAIChat", "Verlintas/BetterAIChat", "124", ["Kotlin", "Compose", "AI"],
      ["Native Android agent with your own", "API keys, Shizuku shell, device", "tools and voice."]),
-    ("03", "NovaBAIC", "23", ["Kotlin", "AI", "MCP"],
+    ("03", "NovaBAIC", "Verlintas/NovaBAIC", "23", ["Kotlin", "AI", "MCP"],
      ["Local-first agent: 57 device tools,", "biomimetic memory, MCP — no", "GMS required."]),
-    ("04", "Syna-NUSV", "22", ["Kotlin", "KMP", "E2EE"],
+    ("04", "Syna-NUSV", "NUSV/Syna-NUSV", "22", ["Kotlin", "KMP", "E2EE"],
      ["Offline-first LAN messenger:", "end-to-end encrypted, self-hosted,", "with a tamper shield."]),
-    ("05", "OpenVisum", "1", ["Kotlin", "Compose", "libVLC"],
+    ("05", "OpenVisum", "Verlintas/OpenVisum", "1", ["Kotlin", "Compose", "libVLC"],
      ["libVLC video player: every format,", "auto subtitles and audio tracks,", "DLNA casting, 9 themes."]),
-    ("06", "VerlinPark", "1", ["Rust", "macOS", "Agents"],
+    ("06", "VerlinPark", "Verlintas/VerlinPark", "1", ["Rust", "macOS", "Agents"],
      ["Native macOS agentic development", "environment for running and", "supervising agent teams."]),
 ]
 
 
+def fetch_stars(repos):
+    """Live star counts at build time; falls back to the curated numbers."""
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if not token:
+        return {}
+    stars = {}
+    for repo in repos:
+        try:
+            request = urllib.request.Request(
+                "https://api.github.com/repos/" + repo,
+                headers={"Authorization": "Bearer " + token, "User-Agent": "profile-art"},
+            )
+            with urllib.request.urlopen(request, timeout=8) as resp:
+                stars[repo] = json.loads(resp.read().decode()).get("stargazers_count")
+        except Exception:
+            continue
+    return stars
+
+
 def projects():
-    width, height = 1200, 512
+    width = 1200
     card_w, card_h = 360, 216
     gap_x, gap_y = 20, 22
-    x0, y0 = 40, 24
+    x0, y0 = 40, 84
+    height = y0 + 2 * card_h + gap_y + 24
+    live = fetch_stars([p[2] for p in PROJECTS])
 
-    parts = [svg_open(width, height, "Selected work — NOIR, BetterAIChat, NovaBAIC, Syna, OpenVisum, VerlinPark"), common_defs()]
+    parts = [svg_open(width, height, "Projects — NOIR, BetterAIChat, NovaBAIC, Syna, OpenVisum, VerlinPark"),
+             common_defs()]
     parts.append('<rect width="%d" height="%d" fill="%s"/>' % (width, height, BG))
+    parts.append('<text x="70" y="52" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">03 / PROJECTS</text>'
+                 % (MONO, RED))
+    parts.append('<text x="1130" y="52" text-anchor="end" font-family="%s" font-size="9" letter-spacing="2" fill="%s">'
+                 "PINNED · STARS LIVE</text>" % (MONO, DIM))
 
-    for i, (index, name, stars, tags, desc) in enumerate(PROJECTS):
+    for i, (index, name, repo, fallback, tags, desc) in enumerate(PROJECTS):
+        stars = str(live.get(repo) if live.get(repo) is not None else fallback)
         col, row = i % 3, i // 3
         x = x0 + col * (card_w + gap_x)
         y = y0 + row * (card_h + gap_y)

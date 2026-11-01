@@ -24,6 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build static art
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/build_profile_assets.py
       - name: Build live stats
         env:

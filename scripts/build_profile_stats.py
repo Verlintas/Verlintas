@@ -120,7 +120,7 @@ def render(stats):
         "</circle>" % art.RED
     )
     parts.append(
-        '<text x="84" y="58" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">SIGNALS</text>'
+        '<text x="84" y="58" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">04 / SIGNALS</text>'
         % (art.MONO, art.RED)
     )
     stamp = stats["now"].strftime("%Y-%m-%d")

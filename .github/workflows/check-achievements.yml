@@ -24,8 +24,19 @@ jobs:
           src = open("profile.html", encoding="utf-8", errors="ignore").read()
           urls = re.findall(r"https://camo\.githubusercontent\.com/[^\"' ]+", src)
           print("camo images found:", len(urls))
-          for url in urls[:6]:
-              print("raw:", url[:120])
+          seen = set()
+          for url in urls:
+              parts = url.split("/")
+              if len(parts) < 5:
+                  continue
+              enc = parts[4].split("?")[0]
+              try:
+                  decoded = bytes.fromhex(enc).decode("utf-8", "ignore")
+              except ValueError:
+                  continue
+              if decoded not in seen:
+                  seen.add(decoded)
+                  print("decoded:", decoded[:130])
           PY
       - name: Fetch achievements page
         run: |

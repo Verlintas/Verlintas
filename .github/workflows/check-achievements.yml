@@ -17,10 +17,25 @@ jobs:
           grep -oiE '(pull-shark|quickdraw|yolo|galaxy-brain|pair-extraordinaire|starstruck|heart-on-your-sleeve|public-sponsor|arctic-code-vault)' profile.html | sort | uniq -c || true
           echo "=== alt texts on profile ==="
           grep -oE 'alt="[^"]+"' profile.html | sort -u | head -40 || true
-          echo "=== readme image refs ==="
-          grep -oE 'assets/[a-z-]+\.svg' profile.html | sort | uniq -c || true
-          echo "=== camo images ==="
-          grep -oE 'camo\.githubusercontent\.com/[^"]{0,90}' profile.html | head -8 || true
+          echo "=== readme images (decoded camo refs) ==="
+          python3 - <<'PY'
+          import re
+          src = open("profile.html", encoding="utf-8", errors="ignore").read()
+          urls = re.findall(r"https://camo\.githubusercontent\.com/[^\"' ]+", src)
+          print("camo images found:", len(urls))
+          seen = set()
+          for url in urls:
+              for part in url.split("/"):
+                  if len(part) > 20 and all(c in "0123456789abcdef" for c in part):
+                      try:
+                          name = bytes.fromhex(part).decode("utf-8", "ignore")
+                      except ValueError:
+                          continue
+                      if name not in seen:
+                          seen.add(name)
+                          print("image:", name)
+                      break
+          PY
       - name: Fetch achievements page
         run: |
           curl -sL -A "Mozilla/5.0" https://github.com/users/Verlintas/achievements -o achievements.html

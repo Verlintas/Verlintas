@@ -123,7 +123,7 @@ def render(stats):
         '<text x="84" y="58" font-family="%s" font-size="10" letter-spacing="4.5" fill="%s">SIGNALS</text>'
         % (art.MONO, art.RED)
     )
-    stamp = stats["now"].strftime("%Y-%m-%d %H:%M UTC")
+    stamp = stats["now"].strftime("%Y-%m-%d")
     parts.append(
         '<text x="1130" y="58" text-anchor="end" font-family="%s" font-size="9" letter-spacing="2" fill="%s">'
         "LIVE · UPDATED %s</text>" % (art.MONO, art.DIM, stamp)

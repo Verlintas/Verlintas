@@ -21,29 +21,30 @@ def main(path):
         raise SystemExit("no <svg> element in %s" % path)
     root = root_match.group(0)
 
-    width_match = re.search(r'width="([0-9.]+)"', root)
-    height_match = re.search(r'height="([0-9.]+)"', root)
-    if width_match and height_match:
+    view_box = re.search(r'viewBox="([-0-9.]+) ([-0-9.]+) ([0-9.]+) ([0-9.]+)"', root)
+    if view_box:
+        min_x, min_y, width, height = (float(value) for value in view_box.groups())
+    else:
+        width_match = re.search(r'width="([0-9.]+)"', root)
+        height_match = re.search(r'height="([0-9.]+)"', root)
+        if not (width_match and height_match):
+            raise SystemExit("cannot determine size in %s" % path)
+        min_x, min_y = 0.0, 0.0
         width = float(width_match.group(1))
         height = float(height_match.group(1))
-    else:
-        view_box = re.search(r'viewBox="0 0 ([0-9.]+) ([0-9.]+)"', root)
-        if not view_box:
-            raise SystemExit("cannot determine size in %s" % path)
-        width = float(view_box.group(1))
-        height = float(view_box.group(2))
 
-    background = '<rect x="0" y="0" width="%g" height="%g" rx="14" fill="%s"/>' % (width, height, BG)
+    background = '<rect x="%g" y="%g" width="%g" height="%g" rx="14" fill="%s"/>' % (
+        min_x, min_y, width, height, BG)
     border = (
-        '<rect x="0.6" y="0.6" width="%g" height="%g" rx="14" fill="none" stroke="%s"/>'
-        % (width - 1.2, height - 1.2, BORDER)
+        '<rect x="%g" y="%g" width="%g" height="%g" rx="14" fill="none" stroke="%s"/>'
+        % (min_x + 0.6, min_y + 0.6, width - 1.2, height - 1.2, BORDER)
     )
     text = text.replace(root, root + background, 1)
     text = text.replace("</svg>", border + "</svg>", 1)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
-    print("wrapped %s (%gx%g)" % (path, width, height))
+    print("wrapped %s (%gx%g at %g,%g)" % (path, width, height, min_x, min_y))
 
 
 if __name__ == "__main__":

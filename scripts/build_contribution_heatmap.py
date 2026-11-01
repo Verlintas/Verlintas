@@ -37,9 +37,9 @@ query($login: String!) {
 }
 """
 
-# GitHub dark-mode green scale
-LEVELS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
-TEXT = "#8b949e"
+# red / black scale, matching the profile art palette
+LEVELS = ["#141016", "#3a0d13", "#6b1220", "#a81a2c", "#ff2d3d"]
+TEXT = "#8f8f9a"
 
 
 def token():
@@ -102,9 +102,9 @@ def build_svg(cal):
     weeks = cal["weeks"]
     total = cal["totalContributions"]
     cell, gap = 11, 3
-    left, top = 32, 22
-    width = left + len(weeks) * (cell + gap) + 6
-    height = top + 7 * (cell + gap) + 22
+    left, top = 40, 28
+    width = left + len(weeks) * (cell + gap) + 14
+    height = top + 7 * (cell + gap) + 28
     parts = []
     parts.append(
         '<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" '
@@ -115,6 +115,10 @@ def build_svg(cal):
         '<style>text{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;font-size:10px;fill:%s}</style>'
         % TEXT
     )
+    parts.append(
+        '<rect x="0" y="0" width="%d" height="%d" rx="14" fill="#0a0a0e" stroke="#2a1116"/>'
+        % (width, height)
+    )
 
     # month labels
     for i, first in month_starts(weeks):
@@ -122,12 +126,12 @@ def build_svg(cal):
             continue
         name = datetime.strptime(first, "%Y-%m-%d").strftime("%b")
         x = left + i * (cell + gap)
-        parts.append('<text x="%d" y="12">%s</text>' % (x, name))
+        parts.append('<text x="%d" y="16">%s</text>' % (x, name))
 
     # weekday labels (Mon/Wed/Fri)
     for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
         y = top + row * (cell + gap) + cell - 2
-        parts.append('<text x="0" y="%d">%s</text>' % (y, label))
+        parts.append('<text x="10" y="%d">%s</text>' % (y, label))
 
     # cells
     for wi, week in enumerate(weeks):
@@ -143,9 +147,9 @@ def build_svg(cal):
             )
 
     # footer: total + legend
-    fy = top + 7 * (cell + gap) + 12
+    fy = top + 7 * (cell + gap) + 16
     parts.append('<text x="%d" y="%d">%d contributions in the last year</text>' % (left, fy, total))
-    lx = width - 6 - 5 * (cell + 2) - 30
+    lx = width - 14 - 5 * (cell + 2) - 30
     parts.append('<text x="%d" y="%d">Less</text>' % (lx - 26, fy))
     for li, color in enumerate(LEVELS):
         parts.append(

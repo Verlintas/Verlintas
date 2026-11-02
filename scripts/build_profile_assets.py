@@ -369,8 +369,8 @@ PROJECTS = [
      ["Offline-first LAN messenger:", "end-to-end encrypted, self-hosted,", "with a tamper shield."]),
     ("05", "OpenVisum", "Verlintas/OpenVisum", "1", ["Kotlin", "Compose", "libVLC"],
      ["libVLC video player: every format,", "auto subtitles and audio tracks,", "DLNA casting, 9 themes."]),
-    ("06", "VerlinPark", "Verlintas/VerlinPark", "1", ["Rust", "macOS", "Agents"],
-     ["Native macOS agentic development", "environment for running and", "supervising agent teams."]),
+    ("06", "VicinityProbe", "Verlintas/VicinityProbe", "0", ["Kotlin", "Compose", "Security"],
+     ["Environment measurement and security", "toolkit: 96 probes, packet capture,", "NFC testing, 15+ diagnostics."]),
 ]
 
 

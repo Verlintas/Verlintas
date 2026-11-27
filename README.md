@@ -32,5 +32,11 @@
 <img src="https://raw.githubusercontent.com/Verlintas/Verlintas/main/assets/divider.svg" width="100%" alt="" />
 
 <p align="center">
+  <a href="https://gitranks.com/profile/Verlintas"><img src="https://gitranks.com/badge/user/Verlintas/tier.svg" height="24" alt="Verlintas on GitRanks: Legend" /></a>
+  <a href="https://gitranks.com/profile/Verlintas"><img src="https://gitranks.com/badge/user/Verlintas/language-rank.svg?scheme=violet" height="24" alt="Verlintas on GitRanks: Kotlin rank #190 of 52,362" /></a>
+  <a href="https://gitranks.com/profile/Verlintas"><img src="https://gitranks.com/badge/user/Verlintas/goal.svg?scheme=night" height="24" alt="Verlintas on GitRanks: next goal top 10,000 devs, 53 stars to go" /></a>
+</p>
+
+<p align="center">
   <sub>Just for fun. — Linus Torvalds</sub>
 </p>
